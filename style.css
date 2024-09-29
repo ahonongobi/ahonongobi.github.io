@@ -22,6 +22,63 @@ body {
     overflow: hidden;
 }
 
+/*#  designing close button like mac os*/
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.macos-close-btn {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #ff5f56; /* MacOS red color */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Optional hover effect */
+.macos-close-btn:hover {
+    background-color: #e05347; /* Slightly darker red on hover */
+}
+
+/* To add the 'X' icon on hover (similar to MacOS effect) */
+.macos-close-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 1px;
+    background-color: #fff;
+    transform: translate(-50%, -50%) rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.macos-close-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 1px;
+    background-color: #fff;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.macos-close-btn:hover::before,
+.macos-close-btn:hover::after {
+    opacity: 1;
+}
+
+
 footer.footer i {
     font-size: 1.4em;
 }
